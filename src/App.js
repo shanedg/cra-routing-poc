@@ -48,7 +48,8 @@ class App extends Component {
       left: 0,
       right: 0,
       top: 0,
-      bottom: 0
+      bottom: 0,
+      // transform: "translateY(0vh)"
     };
     
     styles.content = {
@@ -64,7 +65,9 @@ class App extends Component {
       bottom: 0,
       height: "40px",
       width: "100%",
-      display: "flex"
+      display: "flex",
+      backgroundColor: "#fff",
+      zIndex: 100
     };
     
     styles.navItem = {
@@ -114,7 +117,7 @@ class App extends Component {
                       `location` to `Switch` so it can match
                       the old location as it animates out
                     */}
-                    <CSSTransition key={location.key} classNames="fade" timeout={300}>
+                    <CSSTransition key={location.key} classNames="fade" timeout={500}>
                       <Switch location={location}>
                         <Route exact path="/hsl/:h/:s/:l" component={HSL} />
                         <Route exact path="/rgb/:r/:g/:b" component={RGB} />
